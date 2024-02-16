@@ -1,0 +1,27 @@
+{% extends "intro.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block home %}
+    {% if upload == 0 %}
+    <form action = "/uploader" method = "post" enctype = "multipart/form-data">
+        <div class="mb-3">
+            <ul class="navbar-nav ms-auto mt-2">
+                <li class="nav-item"><label for="image">Insert your selected image:</label></li>
+                <li class="nav-item"><input autocomplete="off" autofocus id="image" name="image" type="file" accept="image/png, image/jpeg"></li>
+                {% if error == 1 or error == 2 %}
+                    <li class="nav-item"><p><span style="color:red">You need to insert an image</span></p></li>
+                {% endif %}
+                <li class="nav-item"><label for="audio">Insert your selected audio:</label></li>
+                <li class="nav-item"><input autocomplete="off" autofocus id="audio" name="audio" type="file" accept="audio/*"></li>
+                {% if error == 1 or error == 3 %}
+                    <li class="nav-item"><p><span style="color:red">You need to insert an audio</span></p></li>
+                {% endif %}
+            </ul>
+        </div>
+        <input type = "submit" value = "Upload">
+    </form>
+    {% endif %}
+{% endblock %}

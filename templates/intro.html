@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Intro
+{% endblock %}
+
+{% block main %}
+    <h1>Welcome to the web page that converts your image and audio files to a video file for free!</h1>
+
+    <h2>The <span style="color:pink">VI</span>deo's pets</h2>
+
+    <img src="static/images/kira2.jpeg" alt="Image" class="img-fluid" width="150">
+
+    <main class="container-fluid py-5 text-center">
+        {% block home %}{% endblock %}
+    </main>
+
+    {% if forward == 1 %}
+        <ul class="navbar-nav ms-auto mt-2">
+            <li class="nav-item"><a class="btn btn-primary" href="/home" role="button">Clic to start uploading your media files</a></li>
+        </ul>
+    {% endif %}
+{% endblock %}
